@@ -21,23 +21,19 @@ class Board extends React.Component {
   }
 
   render() {
+    const items = [];
+
+    for (let i = 0; i < 3; i++) {
+      const squares = [];
+      for (let j = 0; j < 3; j++) {
+        squares.push(this.renderSquare(3*i + j));
+      }
+      items.push(<div className="board-row">{squares}</div>);
+    }
+
     return (
       <div>
-        <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        {items}
       </div>
     );
   }
@@ -108,7 +104,7 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = 'Winner: ' + winner;
+      status = winner === 'Tie' ? "It's a tie!" : 'Winner: ' + winner;
     } else {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
@@ -156,5 +152,11 @@ function calculateWinner(squares) {
     }
   }
 
-  return null;
+  for (let i = 0; i < squares.length; i++) {
+    if (squares[i] == null) {
+      return null;
+    }
+  }
+
+  return 'Tie';
 }
