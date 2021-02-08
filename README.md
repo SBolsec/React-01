@@ -1,2 +1,3 @@
-# React-01
+# React-101
+
 Starting to learn React
