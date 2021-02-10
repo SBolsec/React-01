@@ -19,30 +19,52 @@
 <script type="text/babel">
     class App extends React.Component {
         state = {
-            name: 'Crystal',
-            age: 35
+            name: 'Ryu',
+            age: 30
         };
 
-        handleClick(e) {
-            console.log(e.target);
+        handleClick = (e) => {
+            //console.log(e.target);
+            this.setState({
+                name: 'Joshy',
+                age: 25
+            });
+            console.log(this.state);
         }
 
-        handleMouseOver(e) {
+        handleMouseOver = (e) => {
             console.log(e.target, e.pageX);
         }
 
-        handleCopy(e) {
+        handleCopy = (e) => {
             console.log('Try being original for once!');
+        }
+
+        handleChange = (e) => {
+            this.setState({
+                name: e.target.value
+            })
+        }
+
+        handleSubmit = (e) => {
+            e.preventDefault();
+            console.log('from submitted', this.state.name);
         }
 
         render() {
             return (
                 <div className="app-content">
                     <h1>Hey, ninjas</h1>
+                    <hr />
                     <p>My name is: {this.state.name} and I am {this.state.age}</p> 
                     <button onClick={this.handleClick}>Click me</button> 
                     <button onMouseOver={this.handleMouseOver}>Hover me</button>
                     <p onCopy={this.handleCopy}>What we think, we become</p>
+                    <hr />
+                    <form onSubmit={this.handleSubmit}>
+                        <input type="text" onChange={this.handleChange} />
+                        <button>Submit</button>
+                    </form>
                 </div>
             );
         }
