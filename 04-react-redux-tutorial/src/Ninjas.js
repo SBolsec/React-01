@@ -4,7 +4,8 @@ const Ninjas = ({ ninjas }) => {
     const ninjaList = ninjas
         .filter(ninja => {
             return ninja.age > 20;
-        }).map(ninja => {
+        })
+        .map(ninja => {
             return (
                 <div className="ninja" key={ninja.id}>
                     <div>Name: {ninja.name}</div>
