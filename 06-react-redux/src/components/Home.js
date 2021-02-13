@@ -42,7 +42,6 @@ class Home extends React.Component {
         return (
             <div className="container home">
                 <h4 className="center">Home</h4>
-                <p>Lorem Ipsum</p>
                 {postList}
             </div>
         );
