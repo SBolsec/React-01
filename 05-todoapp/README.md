@@ -2,7 +2,7 @@
 
 Still folowing the `Complete React Tutorial (with Redux)`, this time the task is to create a simple todo app.
 
-This follows the following videos in the tutorial:
+This follows the following videos in the tutorial (#22 and #23 in the playlist):
  - `https://www.youtube.com/watch?v=3qk6yQWKVoQ&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=23`
  - `https://www.youtube.com/watch?v=aC-3c7ai5QI&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG&index=24`
 
